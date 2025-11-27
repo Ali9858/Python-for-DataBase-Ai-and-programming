@@ -1,0 +1,888 @@
+#Practic 0
+
+tuple1 = ("disco",10,1.2 )
+type(tuple1)
+print(tuple1[0])
+print(tuple1[1])
+print(tuple1[2])
+print(type(tuple1[0]))
+print(type(tuple1[1]))
+print(type(tuple1[2]))
+tuple1[-1]
+print(tuple[-1])
+tuple2 = tuple1 + ("hard rock", 10)
+print(tuple2)
+tuple2[0:3]
+len(tuple2)
+
+Ratings = (0, 9, 6, 5, 10, 8, 9, 6, 2)
+RatingsSorted = sorted(Ratings)
+print(RatingsSorted)
+NestedT =(1, 2, ("pop", "rock") ,(3,4),("disco",(1,2)))
+print("Element 0 of Tuple: ", NestedT[0])
+print("Element 1 of Tuple: ", NestedT[1])
+print("Element 2 of Tuple: ", NestedT[2])
+print("Element 3 of Tuple: ", NestedT[3])
+print("Element 4 of Tuple: ", NestedT[4])
+print("Element 2, 0 of Tuple: ",   NestedT[2][0])
+print("Element 2, 1 of Tuple: ",   NestedT[2][1])
+print("Element 3, 0 of Tuple: ",   NestedT[3][0])
+print("Element 3, 1 of Tuple: ",   NestedT[3][1])
+print("Element 4, 0 of Tuple: ",   NestedT[4][0])
+print("Element 4, 1 of Tuple: ",   NestedT[4][1])
+
+genres_tuple = ("pop", "rock", "soul", "hard rock", "soft rock", \
+                "R&B", "progressive rock", "disco")
+len(genres_tuple)
+genres_tuple[3]
+genres_tuple[3:6]
+"disco".find('s')
+C_tuple = (-5, 1, -3)
+C_list = sorted(C_tuple)
+
+
+#Practic 1
+name = "The BodyGuard"
+name
+print(name[0])
+print(name[-1])
+len("The BodyGuard")
+print(name[0:4])
+print(name[::2])
+print(name[0:5:2])
+statement = name + " is the best album"
+print (statement)
+three = 3 * "The BodyGuard"
+print (three)
+print(" The BodyGuard\n is the best album" )
+print(" The BodyGuard \t is the best album" )
+print(" The BodyGuard \\ is the best album" )
+print(r" The BodyGuard \ is the best album" )
+a = "Thriller is the sixth studio album"
+print("before upper:", a)
+b = a.upper()
+print("After upper:", b)
+i = "The BodyGuard is the best album"
+k = a.replace('BodyGuard', 'Janet')
+k
+print(k)
+
+#Practic 2
+album_list = [ "Michael Jackson", "Thriller", 1982, "00:42:19", \
+              "Pop, Rock, R&B", 46.0, 65, "30-Nov-82", None, 10.0]
+album_set = set(album_list)             
+album_set
+music_genres = set(["pop", "pop", "rock", "folk rock", "hard rock", "soul", \
+                    "progressive rock", "soft rock", "R&B", "disco"])
+music_genres
+A = set(["Thriller", "Back in Black", "AC/DC"])
+A.add("NSYNC")
+A.remove("NSYNC")
+"AC/DC" in A
+print(album_set, music_genres)
+print (A)
+
+album_set1 = set(["Thriller", 'AC/DC', 'Back in Black'])
+album_set2 = set([ "AC/DC", "Back in Black", "The Dark Side of the Moon"])
+intersection = album_set1 & album_set2
+
+album_set1.difference(album_set2)
+album_set2.difference(album_set1)
+album_set1.intersection(album_set2)
+album_set1.union(album_set2)
+set(album_set1).issuperset(album_set2)
+set(album_set2).issubset(album_set1)
+set({"Back in Black", "AC/DC"}).issubset(album_set1)
+album_set1.issuperset({"Back in Black", "AC/DC"})   
+print(album_set1.difference(album_set2))
+print(album_set2.difference(album_set1))
+print(album_set1.intersection(album_set2))
+print(intersection)
+print(album_set1.union(album_set2))
+print(set(album_set1).issuperset(album_set2))
+print(set(album_set2).issubset(album_set1))
+print(set({"Back in Black", "AC/DC"}).issubset(album_set1))
+print(album_set1.issuperset({"Back in Black", "AC/DC"}) )
+
+#name = "The BodyGuard"
+#name.first = name.find('he')
+#print(name.first)
+#s1 = "The BodyGuard is the best album"
+
+# Define the pattern to search for
+#pattern = r"Body"
+
+# Use the search() function to search for the pattern in the string
+#result = re.search(pattern, s1)
+
+# Check if a match was found
+#if result:
+    #print("Match found!")
+#else:
+    #print("Match not found.")
+
+#Practic 3
+age = 18
+# age = 19
+
+if age > 18:
+    print("you can enter" )
+else:
+    print("go see Meat Loaf" )
+    
+print("move on")
+
+
+age = 19
+#age = 18
+
+#expression that can be true or false
+if age > 18:
+    
+    #within an indent, we have the expression that is run if the condition is true
+    print("you can enter" )
+
+#The statements after the if statement will run regardless if the condition is true or false 
+print("move on")
+
+age = 18
+
+if age > 18:
+    print("you can enter" )
+elif age == 18:
+    print("go see Pink Floyd")
+else:
+    print("go see Meat Loaf" )
+    
+print("move on")
+
+album_year = 1983
+album_year = 1970
+
+if album_year > 1980:
+    print("Album year is greater than 1980")
+    
+print('do something..')
+
+album_year = 1983
+#album_year = 1970
+
+if album_year > 1980:
+    print("Album year is greater than 1980")
+else:
+    print("less than 1980")
+
+print('do something..')
+
+album_year = 1980
+
+if(album_year > 1979) and (album_year < 1990):
+    print ("Album year was in between 1980 and 1989")
+    
+print("")
+print("Do Stuff..")
+
+album_year = 1990
+
+if(album_year < 1980) or (album_year > 1989):
+    print ("Album was not made in the 1980's")
+else:
+    print("The Album was made in the 1980's ")
+
+    album_year = 1983
+
+if not (album_year == 1984):
+    print ("Album year is not 1984")
+
+player_name = "Lionel Messi"
+sport = "Soccer"
+achievements = 7
+
+if achievements > 10:
+    print(f"{player_name} plays {sport} and has {achievements} achievements.")
+else:
+    print(f"{player_name} does not have more than 10 achievements.")
+
+player_name = "Roger Federer"
+sport = "Tennis"
+achievements = 20
+
+if sport == "Tennis" or achievements == 20:
+    print(f"{player_name} meets the criteria! They play {sport} and have {achievements} achievements.")
+else:
+    print(f"{player_name} does not meet the criteria.")
+
+
+player_name = "Usain Bolt"
+sport = "Athletics"
+achievements = 8
+
+if achievements < 10 and sport != "Soccer":
+    print(f"{player_name} plays {sport} and has only {achievements} achievements.")
+else:
+    print(f"{player_name} does not meet the criteria.")
+
+
+# Practic 5
+Dict = {"key1": 1, "key2": "2", "key3": [3, 3, 3], "key4": (4, 4, 4), ('key5'): 5, (0, 1): 6}
+Dict["key1"]
+Dict[(0, 1)]
+print(Dict)
+release_year_dict = {"Thriller": "1982", "Back in Black": "1980", \
+                    "The Dark Side of the Moon": "1973", "The Bodyguard": "1992", \
+                    "Bat Out of Hell": "1977", "Their Greatest Hits (1971-1975)": "1976", \
+                    "Saturday Night Fever": "1977", "Rumours": "1977"}
+release_year_dict.keys()
+release_year_dict.values()
+release_year_dict['Graduation'] = '2007'
+del(release_year_dict['Thriller'])
+del(release_year_dict['Graduation'])
+'The Bodyguard' in release_year_dict
+print(release_year_dict)
+
+
+#practic 6
+dates = [1982,1980,1973]
+N = len(dates)
+
+for i in range(N):
+    print(dates[i])
+
+for i in range(0, 8):
+    print(i)
+
+for year in dates:  
+    print(year)       
+
+squares = ['red', 'yellow', 'green', 'purple', 'blue']
+
+for i in range(0, 5):
+    print("Before square ", i, 'is',  squares[i])
+    squares[i] = 'white'
+    print("After square ", i, 'is',  squares[i])
+
+squares=['red', 'yellow', 'green', 'purple', 'blue']
+
+for i, square in enumerate(squares):
+    print(i, square)
+
+dates = [1982, 1980, 1973, 2000]
+
+i = 0
+year = dates[0]
+
+while(year != 1973):    
+    print(year)
+    i = i + 1
+    year = dates[i]
+    
+
+print("It took ", i ,"repetitions to get out of loop.")
+
+for num in range(1, 10):
+    if num == 5:
+        print("Breaking the loop at:", num)
+        break
+    print(num)
+
+for num in range(1, 6):
+    if num == 3:
+        continue
+    print(num)
+
+count = 0
+while count < 10:
+    count += 1
+    if count == 3:
+        continue  # skip printing 3
+    if count == 8:
+        break     # stop the loop when count is 8
+    print(count)    
+
+# Practic 7
+
+def add(a):
+    """
+    add 1 to a
+    """
+    b = a + 1
+    print(a, "if you add one", b)
+    return(b)
+help(add)
+add(1)
+add(2)
+
+def Mult(a, b):
+    c = a * b
+    return(c)
+    print('This is not printed')
+    
+result = Mult(12,2)
+print(result)
+Mult(2, 3)
+Mult(10.0, 3.14)
+Mult(2, "The BodyGuard ")
+
+def square(a):
+    
+    # Local variable b
+    b = 1
+    c = a * a + b
+    print(a, "if you square + 1", c) 
+    return(c)
+
+x = 3
+# Makes function call and return function a y
+y = square(x)
+square(2)
+
+def MJ():
+    print('The BodyGuard')
+    
+def MJ1():
+    print('The BodyGuard')
+    return(None)
+MJ()
+MJ1()
+print(MJ())
+print(MJ1())
+
+def con(a, b):
+    return(a + b)
+con("This ", "is")
+print(con)
+
+string= "The BodyGuard is the best album"
+
+# Define a funtion
+def check_string(text):
+    
+# Use if else statement and 'in' operatore to compare the string
+    if text in string:
+        return 'String matched'
+    else:
+        return 'String not matched'
+
+check_string("The BodyGuard is the best")
+
+def compareStrings(x, y):
+# Use if else statement to compare x and y
+    if x==y:
+        return 1
+    
+# Declare two different variables as string1 and string2 and pass string in it
+string1 = "The BodyGuard is the best album"
+string2 = "The BodyGuard is the best album"
+
+# Declare a variable to store result after comparing both the strings
+check = compareStrings(string1, string2)
+
+#Use if else statement to compare the string
+if check==1:
+    print("\nString Matched")
+else:
+    print("\nString not Matched")
+
+def freq(string):
+    
+    #step1: A list variable is declared and initialized to an empty list.
+    words = []
+    
+    #step2: Break the string into list of words
+    words = string.split() # or string.lower().split()
+    
+    #step3: Declare a dictionary
+    Dict = {}
+    
+    #step4: Use for loop to iterate words and values to the dictionary
+    for key in words:
+        Dict[key] = words.count(key)
+        
+    #step5: Print the dictionary
+    print("The Frequency of words is:",Dict)
+    
+#step6: Call function and pass string in it
+freq("Mary had a little lamb Little lamb, little lamb Mary had a little lamb.Its fleece was white as snow And everywhere that Mary went Mary went, Mary went \
+Everywhere that Mary went The lamb was sure to go")
+
+# Practic 8
+#1/0           #ZeroDivisionError 
+#y = a + 5     #TypeError(NameError)
+#a = [1, 2, 3] #IndexError(IndexError)
+#a[10]
+
+
+def safe_divide(numerator,denominator):
+    try:
+        result = numerator / denominator
+        return result
+    except ZeroDivisionError:
+        print("Error: Cannot divide by zero.")
+        return None
+# Test case
+numerator=int(input("Enter the numerator value:-"))
+denominator=int(input("Enter the denominator value:-"))
+print(safe_divide(numerator,denominator))
+
+import math
+
+def perform_calculation(number1):
+    try:
+        result = math.sqrt(number1)
+        print(f"Result: {result}")
+    except ValueError:
+        print("Error: Invalid input! Please enter a positive integer or a float value.")
+# Test case
+number1=float(input("Enter the number:-"))
+perform_calculation(number1)
+
+def complex_calculation(num):
+    try:
+        result = num / (num - 5)
+        print (f"Result: {result}")
+    except Exception as e:
+        print("An error occurred during calculation.")
+# Test case
+user_input = float(input("Enter a number: "))
+complex_calculation(user_input)
+
+#practic 9
+import matplotlib.pyplot as plt
+class Circle(object):
+    
+    # Constructor
+    def __init__(self, radius=3, color='blue'):
+        self.radius = radius
+        self.color = color 
+    
+    # Method
+    def add_radius(self, r):
+        self.radius = self.radius + r
+        return(self.radius)
+    
+    # Method
+    def drawCircle(self):
+        plt.gca().add_patch(plt.Circle((0, 0), radius=self.radius, fc=self.color))
+        plt.axis('scaled')
+        plt.show()
+RedCircle = Circle(10, 'red')
+dir(RedCircle)
+RedCircle.radius
+RedCircle.color
+RedCircle.radius = 1
+RedCircle.drawCircle()
+print('Radius of object:',RedCircle.radius)
+RedCircle.add_radius(2)
+print('Radius of object of after applying the method add_radius(2):',RedCircle.radius)
+RedCircle.add_radius(5)
+print('Radius of object of after applying the method add_radius(5):',RedCircle.radius)
+BlueCircle = Circle(radius=100)
+BlueCircle.radius
+BlueCircle.color
+BlueCircle.drawCircle()
+
+class Rectangle(object):
+    
+    # Constructor
+    def __init__(self, width=2, height=3, color='r'):
+        self.height = height 
+        self.width = width
+        self.color = color
+    
+    # Method
+    def drawRectangle(self):
+        plt.gca().add_patch(plt.Rectangle((0, 0), self.width, self.height ,fc=self.color))
+        plt.axis('scaled')
+        plt.show()
+        
+SkinnyBlueRectangle = Rectangle(2, 3, 'blue')
+SkinnyBlueRectangle.height
+SkinnyBlueRectangle.width
+SkinnyBlueRectangle.color
+SkinnyBlueRectangle.drawRectangle()
+FatYellowRectangle = Rectangle(20, 5, 'yellow')
+FatYellowRectangle.height
+FatYellowRectangle.width
+FatYellowRectangle.color
+FatYellowRectangle.drawRectangle()
+
+class Vehicle:
+    color = "white"
+
+    def __init__(self, max_speed, mileage):
+        self.max_speed = max_speed
+        self.mileage = mileage
+        self.seating_capacity = None
+
+    def assign_seating_capacity(self, seating_capacity):
+        self.seating_capacity = seating_capacity
+
+    def display_properties(self):
+        print("Properties of the Vehicle:")
+        print("Color:", self.color)
+        print("Maximum Speed:", self.max_speed)
+        print("Mileage:", self.mileage)
+        print("Seating Capacity:", self.seating_capacity)
+
+# Creating objects of the Vehicle class
+vehicle1 = Vehicle(200, 20)
+vehicle1.assign_seating_capacity(5)
+vehicle1.display_properties()
+
+vehicle2 = Vehicle(180, 25)
+vehicle2.assign_seating_capacity(4)
+vehicle2.display_properties()
+
+# Practic 10
+import string
+
+givenstring = "Lorem ipsum dolor! diam amet, consetetur Lorem magna. sed diam nonumy eirmod tempor. diam et labore? et diam magna. et diam amet."
+
+class TextAnalyzer(object):
+
+    def __init__(self, text):
+        # remove punctuation
+        translator = str.maketrans("", "", string.punctuation)
+        cleaned = text.translate(translator)
+
+        # make text lowercase
+        cleaned = cleaned.lower()
+
+        # save formatted text
+        self.fmtText = cleaned
+
+    def freqAll(self):
+        # split text into words
+        words = self.fmtText.split()
+
+        # create dictionary
+        freq_map = {}
+        for w in words:
+            freq_map[w] = freq_map.get(w, 0) + 1
+
+        return freq_map
+
+    def freqOf(self, word):
+        # get frequency map
+        freq_map = self.freqAll()
+
+        # lookup specific word
+        word = word.lower()
+        return freq_map.get(word, 0)
+
+
+# --- Usage ---
+analyzed = TextAnalyzer(givenstring)
+
+print("Formatted Text:", analyzed.fmtText)
+
+word = "lorem"
+frequency = analyzed.freqOf(word)
+
+print(f"The word '{word}' appears {frequency} times.")
+
+# Practic 11
+from pyodide.http import pyfetch
+
+import pandas as pd
+
+filename = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/labs/Module%204/data/example1.txt"
+
+async def download(url, filename):
+
+    response = await pyfetch(url)
+
+    if response.status == 200:
+
+        with open(filename, "wb") as f:
+
+            f.write(await response.bytes())
+
+await download(filename, "example1.txt")
+
+print("done")
+
+example1 = "example1.txt"
+file1 = open(example1, "r")
+file1.name
+file1.mode
+FileContent = file1.read()
+print(FileContent)
+type(FileContent)
+file1.close()
+with open(example1, "r") as file1:
+    FileContent = file1.read()
+    print(FileContent)
+
+file1.closed    
+print(FileContent)
+with open(example1, "r") as file1:
+    print(file1.read(4))
+with open(example1, "r") as file1:
+    print(file1.read(4))
+    print(file1.read(4))
+    print(file1.read(7))
+    print(file1.read(15))    
+with open(example1, "r") as file1:
+    print(file1.read(16))
+    print(file1.read(5))
+    print(file1.read(9))
+with open(example1, "r") as file1:
+    print("first line: " + file1.readline())
+with open(example1, "r") as file1:
+    print(file1.readline(20)) # does not read past the end of line
+    print(file1.read(20)) # Returns the next 20 chars
+with open(example1,"r") as file1:
+        i = 0;
+        for line in file1:
+            print("Iteration", str(i), ": ", line)
+            i = i + 1
+with open(example1, "r") as file1:
+    FileasList = file1.readlines()
+
+#Practic 12
+exmp2 = '/Example2.txt'
+with open(exmp2, 'w') as writefile:
+    writefile.write("This is line A")
+with open(exmp2, 'r') as testwritefile:
+    print(testwritefile.read())
+with open(exmp2, 'w') as writefile:
+    writefile.write("This is line A\n")
+    writefile.write("This is line B\n")
+with open(exmp2, 'r') as testwritefile:
+    print(testwritefile.read())
+Lines = ["This is line A\n", "This is line B\n", "This is line C\n"]
+with open('/Example2.txt', 'w') as writefile:
+    for line in Lines:
+        print(line)
+        writefile.write(line)
+with open('/Example2.txt', 'r') as testwritefile:
+    print(testwritefile.read())
+with open('/Example2.txt', 'w') as writefile:
+    writefile.write("Overwrite\n")
+with open('/Example2.txt', 'r') as testwritefile:
+    print(testwritefile.read())
+with open('/Example2.txt', 'a') as testwritefile:
+    testwritefile.write("This is line C\n")
+    testwritefile.write("This is line D\n")
+    testwritefile.write("This is line E\n")
+with open('/Example2.txt', 'r') as testwritefile:
+    print(testwritefile.read())
+with open('/Example2.txt', 'a+') as testwritefile:
+    testwritefile.write("This is line E\n")
+    print(testwritefile.read())
+with open('/Example2.txt', 'a+') as testwritefile:
+    print("Initial Location: {}".format(testwritefile.tell()))
+    
+    data = testwritefile.read()
+    if (not data):  #empty strings return false in python
+            print('Read nothing') 
+    else: 
+            print(testwritefile.read())
+            
+    testwritefile.seek(0,0) # move 0 bytes from beginning.
+    
+    print("\nNew Location : {}".format(testwritefile.tell()))
+    data = testwritefile.read()
+    if (not data): 
+            print('Read nothing') 
+    else: 
+            print(data)
+    
+    print("Location after read: {}".format(testwritefile.tell()) )
+with open('/Example2.txt', 'r+') as testwritefile:
+    testwritefile.seek(0,0) #write at beginning of file
+    testwritefile.write("Line 1" + "\n")
+    testwritefile.write("Line 2" + "\n")
+    testwritefile.write("Line 3" + "\n")
+    testwritefile.write("Line 4" + "\n")
+    testwritefile.write("finished\n")
+    testwritefile.seek(0,0)
+    print(testwritefile.read())
+with open('/Example2.txt', 'r+') as testwritefile:
+    testwritefile.seek(0,0) #write at beginning of file
+    testwritefile.write("Line 1" + "\n")
+    testwritefile.write("Line 2" + "\n")
+    testwritefile.write("Line 3" + "\n")
+    testwritefile.write("Line 4" + "\n")
+    testwritefile.write("finished\n")
+    #Uncomment the line below
+    testwritefile.truncate()
+    testwritefile.seek(0,0)
+    print(testwritefile.read())
+    
+with open('/Example2.txt','r') as readfile:
+    with open('/Example3.txt','w') as writefile:
+          for line in readfile:
+                writefile.write(line)
+
+with open('/Example3.txt','r') as testwritefile:
+    print(testwritefile.read())
+
+
+#Practic 13    
+import pandas as pd
+x = {'Name': ['Rose','John', 'Jane', 'Mary'], 'ID': [1, 2, 3, 4], 'Department': ['Architect Group', 'Software Group', 'Design Team', 'Infrastructure'], 
+      'Salary':[100000, 80000, 50000, 60000]}
+
+#casting the dictionary to a DataFrame
+df = pd.DataFrame(x)
+
+#display the result df
+df
+
+#Retrieving the "ID" column and assigning it to a variable x
+x = df[['ID']]
+
+#check the type of x
+type(x)
+
+#Retrieving the Department, Salary and ID columns and assigning it to a variable z
+
+z = df[['Department','Salary','ID']]
+a = {'Student':['David', 'Samuel', 'Terry', 'Evan'],
+     'Age':['27', '24', '22', '32'],
+     'Country':['UK', 'Canada', 'China', 'USA'],
+     'Course':['Python','Data Structures','Machine Learning','Web Development'],
+     'Marks':['85','72','89','76']}
+df1 = pd.DataFrame(a)
+b = df1[['Marks']]
+c = df1[['Country','Course']]
+x = df1['Student']
+type(x)
+
+
+#Practic 14
+import pandas as pd
+# Read data from CSV file
+
+# csv_path = 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/LXjSAttmoxJfEG6il1Bqfw/Product-sales.csv'
+# df = pd.read_csv(csv_path)
+
+from pyodide.http import pyfetch
+import pandas as pd
+
+filename = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/LXjSAttmoxJfEG6il1Bqfw/Product-sales.csv"
+
+async def download(url, filename):
+    response = await pyfetch(url)
+    if response.status == 200:
+        with open(filename, "wb") as f:
+            f.write(await response.bytes())
+
+
+await download(filename, "Product-sales.csv")
+df = pd.read_csv("Product-sales.csv")
+# Print first five rows of the dataframe
+
+df.head()
+# Read data from Excel File and print the first five rows
+
+xlsx_path = 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/n9LOuKI9SlUa1b5zkaCMeg/Product-sales.xlsx'
+
+await download(xlsx_path, "Product-sales.xlsx")
+df = pd.read_excel("Product-sales.xlsx")
+df.head()
+# Access to the column Length
+
+x = df[['Quantity']]
+
+# Get the column as a series
+
+x = df['Product']
+
+# Get the column as a dataframe
+
+x = df[['Quantity']]
+type(x)
+# Access to multiple columns
+
+y = df[['Product','Category', 'Quantity']]
+df.iloc[0, 0]
+df.iloc[1,0]
+df.loc[0, 'Product']
+df.loc[1, 'Product']
+
+#Practic 15
+
+import numpy as np
+a = np.array([0, 1, 2, 3, 4])
+print("a[0]:", a[0])
+print("a[1]:", a[1])
+print("a[2]:", a[2])
+print("a[3]:", a[3])
+print("a[4]:", a[4])
+print(np.__version__)
+type(a)
+a.dtype
+b = np.array([3.1, 11.02, 6.2, 213.2, 5.2])
+b.dtype
+c = np.array([20, 1, 2, 3, 4])
+# Assign the first element to 100
+
+c[0] = 100
+# Assign the 5th element to 0
+
+c[4] = 0
+
+a = np.array([10, 2, 30, 40,50])
+a[1]=20
+d = c[1:4]
+c[3:5] = 300, 400
+arr = np.array([1, 2, 3, 4, 5, 6, 7])
+
+print(arr[1:5:2])
+print(arr[:4])
+print(arr[4:])
+print(arr[1:5:])
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+print(arr[1:8:2])
+select = [0, 2, 3, 4]
+d = c[select]
+c[select] = 100000
+
+a = np.array([0, 1, 2, 3, 4])
+a.size
+a.ndim
+a.shape
+
+a = np.array([1, -1, 1, -1])
+mean = a.mean()
+standard_deviation=a.std()
+b = np.array([-1, 2, 3, 4, 5])
+max_b = b.max()
+min_b = b.min()
+c = np.array([-10, 201, 43, 94, 502])
+max_c = c.max()
+
+    
+min_c = c.min()
+
+Sum = (max_c +min_c)
+
+import time 
+import sys
+import numpy as np 
+
+import matplotlib.pyplot as plt
+
+
+def Plotvec1(u, z, v):
+    
+    ax = plt.axes() # to generate the full window axes
+    ax.arrow(0, 0, *u, head_width=0.05, color='r', head_length=0.1)# Add an arrow to the  U Axes with arrow head width 0.05, color red and arrow head length 0.1
+    plt.text(*(u + 0.1), 'u')#Adds the text u to the Axes 
+    
+    ax.arrow(0, 0, *v, head_width=0.05, color='b', head_length=0.1)# Add an arrow to the  v Axes with arrow head width 0.05, color red and arrow head length 0.1
+    plt.text(*(v + 0.1), 'v')#Adds the text v to the Axes 
+    
+    ax.arrow(0, 0, *z, head_width=0.05, head_length=0.1)
+    plt.text(*(z + 0.1), 'z')#Adds the text z to the Axes 
+    plt.ylim(-2, 2)#set the ylim to bottom(-2), top(2)
+    plt.xlim(-2, 2)#set the xlim to left(-2), right(2)
+Plotvec1(u, z, v)    
+
+
+        
+        
+
