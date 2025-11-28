@@ -1,0 +1,300 @@
+# Practic 11
+from pyodide.http import pyfetch
+
+import pandas as pd
+
+filename = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/labs/Module%204/data/example1.txt"
+
+async def download(url, filename):
+
+    response = await pyfetch(url)
+
+    if response.status == 200:
+
+        with open(filename, "wb") as f:
+
+            f.write(await response.bytes())
+
+await download(filename, "example1.txt")
+
+print("done")
+
+example1 = "example1.txt"
+file1 = open(example1, "r")
+file1.name
+file1.mode
+FileContent = file1.read()
+print(FileContent)
+type(FileContent)
+file1.close()
+with open(example1, "r") as file1:
+    FileContent = file1.read()
+    print(FileContent)
+
+file1.closed    
+print(FileContent)
+with open(example1, "r") as file1:
+    print(file1.read(4))
+with open(example1, "r") as file1:
+    print(file1.read(4))
+    print(file1.read(4))
+    print(file1.read(7))
+    print(file1.read(15))    
+with open(example1, "r") as file1:
+    print(file1.read(16))
+    print(file1.read(5))
+    print(file1.read(9))
+with open(example1, "r") as file1:
+    print("first line: " + file1.readline())
+with open(example1, "r") as file1:
+    print(file1.readline(20)) # does not read past the end of line
+    print(file1.read(20)) # Returns the next 20 chars
+with open(example1,"r") as file1:
+        i = 0;
+        for line in file1:
+            print("Iteration", str(i), ": ", line)
+            i = i + 1
+with open(example1, "r") as file1:
+    FileasList = file1.readlines()
+
+#Practic 12
+exmp2 = '/Example2.txt'
+with open(exmp2, 'w') as writefile:
+    writefile.write("This is line A")
+with open(exmp2, 'r') as testwritefile:
+    print(testwritefile.read())
+with open(exmp2, 'w') as writefile:
+    writefile.write("This is line A\n")
+    writefile.write("This is line B\n")
+with open(exmp2, 'r') as testwritefile:
+    print(testwritefile.read())
+Lines = ["This is line A\n", "This is line B\n", "This is line C\n"]
+with open('/Example2.txt', 'w') as writefile:
+    for line in Lines:
+        print(line)
+        writefile.write(line)
+with open('/Example2.txt', 'r') as testwritefile:
+    print(testwritefile.read())
+with open('/Example2.txt', 'w') as writefile:
+    writefile.write("Overwrite\n")
+with open('/Example2.txt', 'r') as testwritefile:
+    print(testwritefile.read())
+with open('/Example2.txt', 'a') as testwritefile:
+    testwritefile.write("This is line C\n")
+    testwritefile.write("This is line D\n")
+    testwritefile.write("This is line E\n")
+with open('/Example2.txt', 'r') as testwritefile:
+    print(testwritefile.read())
+with open('/Example2.txt', 'a+') as testwritefile:
+    testwritefile.write("This is line E\n")
+    print(testwritefile.read())
+with open('/Example2.txt', 'a+') as testwritefile:
+    print("Initial Location: {}".format(testwritefile.tell()))
+    
+    data = testwritefile.read()
+    if (not data):  #empty strings return false in python
+            print('Read nothing') 
+    else: 
+            print(testwritefile.read())
+            
+    testwritefile.seek(0,0) # move 0 bytes from beginning.
+    
+    print("\nNew Location : {}".format(testwritefile.tell()))
+    data = testwritefile.read()
+    if (not data): 
+            print('Read nothing') 
+    else: 
+            print(data)
+    
+    print("Location after read: {}".format(testwritefile.tell()) )
+with open('/Example2.txt', 'r+') as testwritefile:
+    testwritefile.seek(0,0) #write at beginning of file
+    testwritefile.write("Line 1" + "\n")
+    testwritefile.write("Line 2" + "\n")
+    testwritefile.write("Line 3" + "\n")
+    testwritefile.write("Line 4" + "\n")
+    testwritefile.write("finished\n")
+    testwritefile.seek(0,0)
+    print(testwritefile.read())
+with open('/Example2.txt', 'r+') as testwritefile:
+    testwritefile.seek(0,0) #write at beginning of file
+    testwritefile.write("Line 1" + "\n")
+    testwritefile.write("Line 2" + "\n")
+    testwritefile.write("Line 3" + "\n")
+    testwritefile.write("Line 4" + "\n")
+    testwritefile.write("finished\n")
+    #Uncomment the line below
+    testwritefile.truncate()
+    testwritefile.seek(0,0)
+    print(testwritefile.read())
+    
+with open('/Example2.txt','r') as readfile:
+    with open('/Example3.txt','w') as writefile:
+          for line in readfile:
+                writefile.write(line)
+
+with open('/Example3.txt','r') as testwritefile:
+    print(testwritefile.read())
+
+
+#Practic 13    
+import pandas as pd
+x = {'Name': ['Rose','John', 'Jane', 'Mary'], 'ID': [1, 2, 3, 4], 'Department': ['Architect Group', 'Software Group', 'Design Team', 'Infrastructure'], 
+      'Salary':[100000, 80000, 50000, 60000]}
+
+#casting the dictionary to a DataFrame
+df = pd.DataFrame(x)
+
+#display the result df
+df
+
+#Retrieving the "ID" column and assigning it to a variable x
+x = df[['ID']]
+
+#check the type of x
+type(x)
+
+#Retrieving the Department, Salary and ID columns and assigning it to a variable z
+
+z = df[['Department','Salary','ID']]
+a = {'Student':['David', 'Samuel', 'Terry', 'Evan'],
+     'Age':['27', '24', '22', '32'],
+     'Country':['UK', 'Canada', 'China', 'USA'],
+     'Course':['Python','Data Structures','Machine Learning','Web Development'],
+     'Marks':['85','72','89','76']}
+df1 = pd.DataFrame(a)
+b = df1[['Marks']]
+c = df1[['Country','Course']]
+x = df1['Student']
+type(x)
+
+
+#Practic 14
+import pandas as pd
+# Read data from CSV file
+
+# csv_path = 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/LXjSAttmoxJfEG6il1Bqfw/Product-sales.csv'
+# df = pd.read_csv(csv_path)
+
+from pyodide.http import pyfetch
+import pandas as pd
+
+filename = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/LXjSAttmoxJfEG6il1Bqfw/Product-sales.csv"
+
+async def download(url, filename):
+    response = await pyfetch(url)
+    if response.status == 200:
+        with open(filename, "wb") as f:
+            f.write(await response.bytes())
+
+
+await download(filename, "Product-sales.csv")
+df = pd.read_csv("Product-sales.csv")
+# Print first five rows of the dataframe
+
+df.head()
+# Read data from Excel File and print the first five rows
+
+xlsx_path = 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/n9LOuKI9SlUa1b5zkaCMeg/Product-sales.xlsx'
+
+await download(xlsx_path, "Product-sales.xlsx")
+df = pd.read_excel("Product-sales.xlsx")
+df.head()
+# Access to the column Length
+
+x = df[['Quantity']]
+
+# Get the column as a series
+
+x = df['Product']
+
+# Get the column as a dataframe
+
+x = df[['Quantity']]
+type(x)
+# Access to multiple columns
+
+y = df[['Product','Category', 'Quantity']]
+df.iloc[0, 0]
+df.iloc[1,0]
+df.loc[0, 'Product']
+df.loc[1, 'Product']
+
+#Practic 15
+
+import numpy as np
+a = np.array([0, 1, 2, 3, 4])
+print("a[0]:", a[0])
+print("a[1]:", a[1])
+print("a[2]:", a[2])
+print("a[3]:", a[3])
+print("a[4]:", a[4])
+print(np.__version__)
+type(a)
+a.dtype
+b = np.array([3.1, 11.02, 6.2, 213.2, 5.2])
+b.dtype
+c = np.array([20, 1, 2, 3, 4])
+# Assign the first element to 100
+
+c[0] = 100
+# Assign the 5th element to 0
+
+c[4] = 0
+
+a = np.array([10, 2, 30, 40,50])
+a[1]=20
+d = c[1:4]
+c[3:5] = 300, 400
+arr = np.array([1, 2, 3, 4, 5, 6, 7])
+
+print(arr[1:5:2])
+print(arr[:4])
+print(arr[4:])
+print(arr[1:5:])
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+print(arr[1:8:2])
+select = [0, 2, 3, 4]
+d = c[select]
+c[select] = 100000
+
+a = np.array([0, 1, 2, 3, 4])
+a.size
+a.ndim
+a.shape
+
+a = np.array([1, -1, 1, -1])
+mean = a.mean()
+standard_deviation=a.std()
+b = np.array([-1, 2, 3, 4, 5])
+max_b = b.max()
+min_b = b.min()
+c = np.array([-10, 201, 43, 94, 502])
+max_c = c.max()
+
+    
+min_c = c.min()
+
+Sum = (max_c +min_c)
+
+import time 
+import sys
+import numpy as np 
+
+import matplotlib.pyplot as plt
+
+
+def Plotvec1(u, z, v):
+    
+    ax = plt.axes() # to generate the full window axes
+    ax.arrow(0, 0, *u, head_width=0.05, color='r', head_length=0.1)# Add an arrow to the  U Axes with arrow head width 0.05, color red and arrow head length 0.1
+    plt.text(*(u + 0.1), 'u')#Adds the text u to the Axes 
+    
+    ax.arrow(0, 0, *v, head_width=0.05, color='b', head_length=0.1)# Add an arrow to the  v Axes with arrow head width 0.05, color red and arrow head length 0.1
+    plt.text(*(v + 0.1), 'v')#Adds the text v to the Axes 
+    
+    ax.arrow(0, 0, *z, head_width=0.05, head_length=0.1)
+    plt.text(*(z + 0.1), 'z')#Adds the text z to the Axes 
+    plt.ylim(-2, 2)#set the ylim to bottom(-2), top(2)
+    plt.xlim(-2, 2)#set the xlim to left(-2), right(2)
+Plotvec1(u, z, v)    
