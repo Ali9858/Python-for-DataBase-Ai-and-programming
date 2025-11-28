@@ -1,0 +1,86 @@
+import requests
+import os
+import json
+from PIL import Image
+from IPython.display import IFrame
+from randomuser import RandomUser
+import pandas as pd
+
+url='https://www.ibm.com/'
+r=requests.get(url)
+r.status_code
+print(r.request.headers)
+print("request body:", r.request.body)
+header=r.headers
+print(r.headers)
+header['Date']
+header['Content-Type']
+r.encoding
+r.text[0:100]
+url='https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/IDSNlogo.png'
+r=requests.get(url)
+print(r.headers)
+r.headers['Content-Type']
+path=os.path.join(os.getcwd(),'image.png')
+with open(path,'wb') as f:
+    f.write(r.content)
+Image.open(path)
+url='https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/labs/Module%205/data/Example1.txt'
+path=os.path.join(os.getcwd(),'example1.txt')
+r=requests.get(url)
+with open(path,'wb') as f:
+    f.write(r.content)
+url_get='http://httpbin.org/get'
+payload={"name":"Joseph","ID":"123"}
+r=requests.get(url_get,params=payload)
+r.url
+print("request body:", r.request.body)
+print(r.text)
+r.headers['Content-Type']
+r.json()
+r.json()['args']
+url_post='http://httpbin.org/post'
+r_post=requests.post(url_post,data=payload)
+#print("POST request URL:",response.url )
+#print("GET request URL:",r.url)
+print("POST request URL:", r_post.url)  # Use r_post instead of response
+print("POST request body:",r_post.request.body)
+print("GET request body:",r.request.body)
+r_post.json()['form']
+
+
+#Practic 2
+r = RandomUser()
+some_list = r.generate_users(10)
+name = r.get_full_name()
+for user in some_list:
+    print (user.get_full_name()," ",user.get_email())
+
+for user in some_list:
+    print (user.get_picture())
+
+def get_users():
+    users =[]
+     
+    for user in RandomUser.generate_users(10):
+        users.append({"Name":user.get_full_name(),"Gender":user.get_gender(),"City":user.get_city(),"State":user.get_state(),"Email":user.get_email(), "DOB":user.get_dob(),"Picture":user.get_picture()})
+      
+    return pd.DataFrame(users)
+#exercise1
+get_users()
+df1 = pd.DataFrame(get_users())
+data = requests.get("https://web.archive.org/web/20240929211114/https://fruityvice.com/api/fruit/all")
+results = json.loads(data.text)
+pd.DataFrame(results)
+df2 = pd.json_normalize(results)
+cherry = df2.loc[df2["name"] == 'Cherry']
+(cherry.iloc[0]['family']) , (cherry.iloc[0]['genus'])
+#exercise2
+cal_banana = df2.loc[df2["name"] == 'Banana']
+cal_banana.iloc[0]['nutritions.calories']
+#exercise3
+data2 = requests.get("https://official-joke-api.appspot.com/jokes/ten")
+results2 = json.loads(data2.text)
+df3 = pd.DataFrame(results2)
+df3.drop(columns=["type","id"],inplace=True)
+
